@@ -1,0 +1,31 @@
+body {
+  background-color: #EDEEF1;
+  position: relative;
+
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#cursor {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  background-blend-mode: difference;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  mix-blend-mode: multiply; /* 乗算ブレンドモードを適用 */
+}
+
+#cursor.is-on {
+  width: 100px;
+  height: 100px;
+}
